@@ -1,7 +1,7 @@
 locals {
     default_subnets = [
     {
-      network_private_subnet_network_region = "GRA9"
+      network_private_subnet_network_region = "EU-WEST-PAR"
       network_private_subnet_cidr           = "10.0.1.0/24"
       network_private_subnet_start_ip       = "10.0.1.10"
       network_private_subnet_end_ip         = "10.0.1.200"
