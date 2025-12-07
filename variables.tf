@@ -8,7 +8,7 @@ variable "subnet_network_id" {
   type        = string
 
   validation {
-    condition     = length(trim(var.subnet_network_id)) > 0
+    condition     = length(trim(var.subnet_network_id, " ")) > 0
     error_message = "The subnet_network_id must be a non-empty string."
   }
 }
@@ -18,7 +18,7 @@ variable "subnet_region" {
   type        = string
 
   validation {
-    condition     = length(trim(var.subnet_region)) > 0
+    condition     = length(trim(var.subnet_region, " ")) > 0
     error_message = "The subnet_region must be a non-empty string."
   }
 }
@@ -28,7 +28,7 @@ variable "subnet_cidr" {
   type        = string
 
   validation {
-    condition     = can(cidrnetmask(trim(var.subnet_cidr)))
+    condition     = can(cidrnetmask(trim(var.subnet_cidr, " ")))
     error_message = "The subnet_cidr must be a valid CIDR block."
   }
 }
@@ -38,7 +38,7 @@ variable "subnet_start_ip" {
   type        = string
 
   validation {
-    condition     = can(regex("^([0-9]{1,3}\\.){3}[0-9]{1,3}$", trim(var.subnet_start_ip)))
+    condition     = can(regex("^([0-9]{1,3}\\.){3}[0-9]{1,3}$", trim(var.subnet_start_ip, " ")))
     error_message = "The subnet_start_ip must be a valid IPv4 address."
   }
 }
@@ -48,7 +48,7 @@ variable "subnet_end_ip" {
   type        = string
 
   validation {
-    condition     = can(regex("^([0-9]{1,3}\\.){3}[0-9]{1,3}$", trim(var.subnet_end_ip)))
+    condition     = can(regex("^([0-9]{1,3}\\.){3}[0-9]{1,3}$", trim(var.subnet_end_ip, " ")))
     error_message = "The subnet_end_ip must be a valid IPv4 address."
   }
 }
