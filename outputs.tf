@@ -4,6 +4,11 @@ output "service_name" {
   value       = ovh_cloud_project_network_private_subnet.this.service_name
 }
 
+output "subnet_id" {
+  description = "ID of the private subnet"
+  value = ovh_cloud_project_network_private_subnet.this.id
+}
+
 output "network_id" {
   description = "ID of the private network this subnet belongs to"
   value       = ovh_cloud_project_network_private_subnet.this.network_id
