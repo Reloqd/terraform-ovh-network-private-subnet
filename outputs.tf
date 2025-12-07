@@ -9,11 +9,6 @@ output "network_id" {
   value       = ovh_cloud_project_network_private_subnet.this.network_id
 }
 
-output "dhcp_id" {
-  description = "DHCP ID for this subnet"
-  value       = ovh_cloud_project_network_private_subnet.this.dhcp_id
-}
-
 output "region" {
   description = "Region where the subnet is created"
   value       = ovh_cloud_project_network_private_subnet.this.region
